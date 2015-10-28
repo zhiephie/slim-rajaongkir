@@ -36,15 +36,16 @@ $app->view->parserOptions = array(
 $dotenv = new \Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
+$rajaongkir = new hok00age\RajaOngkir(getenv("KEY_RAJAONGKIR"));
+$app->response->headers->set('Content-Type', 'application/json');
+
 // Define routes
 $app->get('/', function () use ($app) {
     // Render index view
     $app->render('index.html');
 });
 
-$app->get('/provinsi', function() use ($app) {
-	$app->response->headers->set('Content-Type', 'application/json');
-	$rajaongkir = new hok00age\RajaOngkir(getenv("KEY_RAJAONGKIR"));
+$app->get('/provinsi', function() use ($app, $rajaongkir) {
 	try {	
 		$provinsi = $rajaongkir->getProvince();
 		$response = $provinsi->raw_body;
@@ -55,9 +56,7 @@ $app->get('/provinsi', function() use ($app) {
 	echo $response;
 });
 
-$app->get('/city', function() use ($app) {
-	$app->response->headers->set('Content-Type', 'application/json');
-	$rajaongkir = new hok00age\RajaOngkir(getenv("KEY_RAJAONGKIR"));
+$app->get('/city', function() use ($app, $rajaongkir) {
 	try {	
 		$city = $rajaongkir->getCity();
 		$response = $city->raw_body;
@@ -68,9 +67,7 @@ $app->get('/city', function() use ($app) {
 	echo $response;
 });
 
-$app->get('/cost', function() use ($app) {
-	$app->response->headers->set('Content-Type', 'application/json');
-	$rajaongkir = new hok00age\RajaOngkir(getenv("KEY_RAJAONGKIR"));
+$app->get('/cost', function() use ($app, $rajaongkir) {
 	$get = [
 			'origin' => $app->request()->post('origin') ? $app->request()->post('origin') : 501,
 			'destination' => $app->request()->post('destination') ? $app->request()->post('destination') : 114,
