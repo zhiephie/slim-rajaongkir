@@ -1,7 +1,7 @@
 <?php
 /**
 * @author  : Yudi Purwanto <yp@timexstudio.com or purwantoyudi42@gmail.com>
-* @link    : https://timexstudio.com (jangan meminta menjadi semperna, tapi jadilah yang berguna)
+* @link    : https://timexstudio.com (jangan meminta menjadi sempurna, tapi jadilah yang berguna)
 * @since   : 28 Oct 2015
 **/
 require 'vendor/autoload.php';
