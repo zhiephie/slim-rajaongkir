@@ -47,11 +47,12 @@ $app->get('/provinsi', function() use ($app) {
 	$rajaongkir = new hok00age\RajaOngkir(getenv("KEY_RAJAONGKIR"));
 	try {	
 		$provinsi = $rajaongkir->getProvince();
-		// echo '{"provinsi": ' . json_encode($provinsi) . '}';
+		$response = $provinsi->raw_body;
 	} catch(\Exception $e) {
 		$provinsi = '{"error":{"text":'. $e->getMessage() .'}}'; 
+		$response = $provinsi;
 	}
-	print_r($provinsi);
+	echo $response;
 });
 
 $app->get('/city', function() use ($app) {
@@ -59,10 +60,12 @@ $app->get('/city', function() use ($app) {
 	$rajaongkir = new hok00age\RajaOngkir(getenv("KEY_RAJAONGKIR"));
 	try {	
 		$city = $rajaongkir->getCity();
+		$response = $city->raw_body;
 	} catch(\Exception $e) {
 		$city = '{"error":{"text":'. $e->getMessage() .'}}'; 
+		$response = $city;
 	}
-	print_r($city);
+	echo $response;
 });
 
 $app->get('/cost', function() use ($app) {
@@ -75,11 +78,13 @@ $app->get('/cost', function() use ($app) {
 			'courier' => $app->request()->post('courier') ? $app->request()->post('courier') : 'jne',
 		];
 	try {	
-		$city = $rajaongkir->getCost($get['origin'], $get['destination'], $get['weight'], $get['courier']);
+		$cost = $rajaongkir->getCost($get['origin'], $get['destination'], $get['weight'], $get['courier']);
+		$response = $cost->raw_body;
 	} catch(\Exception $e) {
-		$city = '{"error":{"text":'. $e->getMessage() .'}}'; 
+		$cost = '{"error":{"text":'. $e->getMessage() .'}}';
+		$response = $cost;
 	}
-	print_r($city);
+	echo $response;
 });
 
 // Run app
