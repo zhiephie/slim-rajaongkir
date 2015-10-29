@@ -1,6 +1,12 @@
 # slim-rajaongkir
 Cek Ongkos Kirim (Slim+ RajaOngkir)
 
+## Install
+Install the latest version using composer.
+``` bash
+$ composer create-project --no-interaction --stability=dev zhiephie/slim-rajaongkir app
+```
+
 # Slim Framework
 
 [![Build Status](https://travis-ci.org/slimphp/Slim.svg?branch=master)](https://travis-ci.org/slimphp/Slim)
