@@ -8,10 +8,20 @@ require 'vendor/autoload.php';
 
 // Prepare app
 $app = new \Slim\Slim(array(
-	'debug' => true,
-	'mode' => 'development',
+	'debug' => getenv("DEBUG"),
+	'mode' => getenv("MODE"),
     'templates.path' => 'resources/views'
 ));
+
+// Add Middleware
+// $app->add(new \Slim\Middleware\JwtAuthentication([
+	 // "path" => ["/provinsi", "/city", "/cost"],
+     // "secret" => getenv("JWT_AUTH"),
+	 // "logger" => $monolog,
+	 // "callback" => function ($options) use ($app) {
+        // $app->jwt = $options["decoded"];
+    // }
+// ]));
 
 // Using Twig
 Twig_Autoloader::register();
