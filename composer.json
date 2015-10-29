@@ -21,5 +21,6 @@
         "hok00age/rajaongkir": "^1.0",
         "vlucas/phpdotenv": "^2.0",
         "tuupola/slim-jwt-auth": "^1.0"
-    }
+    },
+    "minimum-stability": "dev"
 }
