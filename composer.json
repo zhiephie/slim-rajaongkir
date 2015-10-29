@@ -1,8 +1,25 @@
 {
+	"name": "zhiephie/slim-rajaongkir",
+    "description": "Check Ongkos Kirim RajaOngkir Slim Framework",
+    "keywords": [
+        "slim",
+        "rajaongkir"
+    ],
+    "homepage": "https://github.com/zhiephie/slim-rajaongkir",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yudi Purwanto",
+            "email": "yp@timexstudio.com",
+            "homepage": "https://timexstudio.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "slim/slim": "2.*",
         "twig/twig": "1.*",
         "hok00age/rajaongkir": "^1.0",
-        "vlucas/phpdotenv": "^2.0"
+        "vlucas/phpdotenv": "^2.0",
+        "tuupola/slim-jwt-auth": "^1.0"
     }
 }
