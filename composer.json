@@ -22,5 +22,10 @@
         "vlucas/phpdotenv": "^2.0",
         "tuupola/slim-jwt-auth": "^1.0"
     },
+     "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
     "minimum-stability": "dev"
 }
